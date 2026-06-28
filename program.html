@@ -1,0 +1,1138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Programs - Captain Foundation AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5A;
+            --primary-light: #E8F5ED;
+            --primary-lighter: #F2FAF5;
+            --accent: #4F46E5;
+            --accent-light: #EEF2FF;
+            --dark: #1a1a1a;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --border: #E5E7EB;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: #374151;
+            background: #fff;
+        }
+
+        /* ===== CUSTOM LOGO ===== */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand-text .name {
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--dark);
+            letter-spacing: -0.3px;
+        }
+
+        .brand-text .name .ai-badge {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            font-weight: 700;
+            vertical-align: middle;
+        }
+
+        .brand-text .tag {
+            font-size: 10px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            padding: 14px 0;
+            background: #fff;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .nav-link {
+            color: #4B5563 !important;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 14px !important;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .btn-donate-nav {
+            background: var(--primary);
+            color: #fff !important;
+            border: 1px solid var(--primary);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-donate-nav:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .nav-icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B7280;
+            text-decoration: none;
+            margin-right: 4px;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* ===== Page Header ===== */
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 70px 0 60px;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .page-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .page-header h1 {
+            font-size: 44px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            opacity: 0.95;
+            position: relative;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .breadcrumb-wrap {
+            margin-top: 24px;
+            font-size: 14px;
+            position: relative;
+        }
+
+        .breadcrumb-wrap a {
+            color: #fff;
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .breadcrumb-wrap a:hover {
+            opacity: 1;
+        }
+
+        .breadcrumb-wrap span {
+            margin: 0 8px;
+            opacity: 0.7;
+        }
+
+        .breadcrumb-wrap .current {
+            font-weight: 600;
+        }
+
+        /* ===== Section Title ===== */
+        .section-title {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 12px;
+            text-align: center;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--gray);
+            margin: 0 auto 50px;
+            font-size: 15px;
+            max-width: 600px;
+        }
+
+        /* ===== Programs Grid ===== */
+        .programs-section {
+            padding: 80px 0;
+        }
+
+        .program-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 28px 24px;
+            height: 100%;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .program-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-light);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 22px;
+        }
+
+        .program-card h5 {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .program-card p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 16px;
+        }
+
+        .program-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .program-list li {
+            padding: 6px 0;
+            font-size: 13px;
+            color: #4B5563;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .program-list li i {
+            color: var(--primary);
+            font-size: 12px;
+        }
+
+        /* ===== Approach Section ===== */
+        .approach-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .approach-step {
+            text-align: center;
+            padding: 20px 16px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 18px;
+            margin: 0 auto 20px;
+            box-shadow: 0 5px 15px rgba(0, 168, 107, 0.3);
+        }
+
+        .approach-step h5 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .approach-step p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ===== Featured Program ===== */
+        .featured-program {
+            padding: 80px 0;
+        }
+
+        .featured-image {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 4/3;
+        }
+
+        .featured-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .featured-tag {
+            display: inline-block;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .featured-content h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .featured-content p {
+            color: var(--gray);
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .featured-stats {
+            display: flex;
+            gap: 24px;
+            margin: 24px 0;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .f-stat-num {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .f-stat-lbl {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        .btn-featured {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+
+        .btn-featured:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* ===== Impact Numbers ===== */
+        .impact-numbers {
+            padding: 60px 0;
+            background: var(--primary-light);
+        }
+
+        .num-card {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .num-card .num {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 6px;
+        }
+
+        .num-card .lbl {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ===== CTA Section ===== */
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 70px 0;
+            text-align: center;
+            color: #fff;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .cta-section h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+            position: relative;
+        }
+
+        .cta-section p {
+            font-size: 15px;
+            opacity: 0.95;
+            margin-bottom: 28px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+        }
+
+        .btn-cta-white {
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            padding: 12px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            position: relative;
+        }
+
+        .btn-cta-white:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            color: var(--primary);
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #0F1419;
+            color: #9CA3AF;
+            padding: 60px 0 30px;
+        }
+
+        footer h6 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand-wrap .name {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .footer-brand-wrap .name .ai-badge {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #9CA3AF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-subscribe {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-subscribe input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 13px;
+        }
+
+        .footer-subscribe input::placeholder {
+            color: #6B7280;
+        }
+
+        .footer-subscribe button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 40px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary);
+        }
+
+        /* ===== Cookie Banner ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: #1F2937;
+            color: #D1D5DB;
+            padding: 14px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cookie-banner button {
+            margin-left: 12px;
+        }
+
+        .btn-cookie {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #D1D5DB;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        .btn-accept {
+            background: var(--primary);
+            border: none;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+            cursor: pointer;
+        }
+
+        /* Back to Top */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 168, 107, 0.3);
+            transition: all 0.2s;
+            z-index: 999;
+        }
+
+        .back-top:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 30px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .cta-section h2 {
+                font-size: 24px;
+            }
+
+            .featured-content h2 {
+                font-size: 24px;
+            }
+
+            .num-card .num {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="brand-logo" href="home.html">
+                <div class="">
+                    <img class="img-fluid d-block" src="assts/logo/logo.png" alt="Captain Foundation AI"
+                        style="max-height:70px;width:auto;display:block;">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="program.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#get-involved">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donate_page.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+
+                <a href="donate_page.html" class="btn btn-donate-nav">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Page Header ===== -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Programs</h1>
+            <p>Impactful programs that empower communities through education, health, and sustainable development.</p>
+            <div class="breadcrumb-wrap">
+                <a href="home.html">Home</a> <span>/</span> <span class="current">Programs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Programs Grid ===== -->
+    <section class="programs-section">
+        <div class="container">
+            <h2 class="section-title">Creating Lasting Change</h2>
+            <p class="section-subtitle">Each program is designed to address root causes and create sustainable,
+                measurable impact.</p>
+
+            <div class="row g-4">
+                <!-- Program 1: Education -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-graduation-cap"></i></div>
+                        <h5>Education Programs</h5>
+                        <p>Providing access to quality education, scholarships, and learning resources worldwide.</p>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check"></i> School construction</li>
+                            <li><i class="fas fa-check"></i> Teacher training</li>
+                            <li><i class="fas fa-check"></i> Scholarship funds</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 2: Clean Water -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-tint"></i></div>
+                        <h5>Clean Water Projects</h5>
+                        <p>Building wells and water purification systems to bring safe drinking water to communities.
+                        </p>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check"></i> Well construction</li>
+                            <li><i class="fas fa-check"></i> Water purification</li>
+                            <li><i class="fas fa-check"></i> Sanitation education</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 3: Community Development -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-users"></i></div>
+                        <h5>Community Development</h5>
+                        <p>Empowering communities with skills training, microfinance, and infrastructure support.</p>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check"></i> Skills training</li>
+                            <li><i class="fas fa-check"></i> Microfinance programs</li>
+                            <li><i class="fas fa-check"></i> Infrastructure projects</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 4: Volunteer -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-heart"></i></div>
+                        <h5>Volunteer Programs</h5>
+                        <p>Join our global network of volunteers making a hands-on difference in communities.</p>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check"></i> International placements</li>
+                            <li><i class="fas fa-check"></i> Skills-based volunteering</li>
+                            <li><i class="fas fa-check"></i> Team expeditions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 5: Emergency Relief -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-exclamation-triangle"></i></div>
+                        <h5>Emergency Relief</h5>
+                        <p>Rapid response to natural disasters and humanitarian crises with essential aid.</p>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check"></i> Disaster response teams</li>
+                            <li><i class="fas fa-check"></i> Emergency supplies</li>
+                            <li><i class="fas fa-check"></i> Temporary shelter</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Program 6: Advocacy -->
+                <div class="col-md-6 col-lg-4">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-bullhorn"></i></div>
+                        <h5>Advocacy</h5>
+                        <p>Driving policy change and raising awareness on critical global development issues.</p>
+                        <ul class="program-list">
+                            <li><i class="fas fa-check"></i> Policy advocacy</li>
+                            <li><i class="fas fa-check"></i> Awareness campaigns</li>
+                            <li><i class="fas fa-check"></i> Research & reports</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Our Approach ===== -->
+    <section class="approach-section">
+        <div class="container">
+            <h2 class="section-title">Our Approach</h2>
+            <p class="section-subtitle">A community-driven process that ensures every dollar creates real, lasting
+                change.</p>
+
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="approach-step">
+                        <div class="step-number">1</div>
+                        <h5>Identify Need</h5>
+                        <p>We work with local communities to identify the most pressing challenges.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="approach-step">
+                        <div class="step-number">2</div>
+                        <h5>Partner Locally</h5>
+                        <p>We collaborate with local organizations for culturally informed solutions.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="approach-step">
+                        <div class="step-number">3</div>
+                        <h5>Implement Program</h5>
+                        <p>Our teams deliver programs with full transparency and accountability.</p>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="approach-step">
+                        <div class="step-number">4</div>
+                        <h5>Measure Impact</h5>
+                        <p>We track outcomes and share results with donors and stakeholders.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Impact Numbers ===== -->
+    <section class="impact-numbers">
+        <div class="container">
+            <div class="row g-3">
+                <div class="col-6 col-md-3">
+                    <div class="num-card">
+                        <div class="num">340+</div>
+                        <div class="lbl">Active Programs</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="num-card">
+                        <div class="num">50K+</div>
+                        <div class="lbl">Lives Impacted</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="num-card">
+                        <div class="num">12</div>
+                        <div class="lbl">Countries Served</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="num-card">
+                        <div class="num">2,847</div>
+                        <div class="lbl">Active Volunteers</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Featured Program ===== -->
+    <section class="featured-program">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6 order-lg-2">
+                    <div class="featured-image">
+                        <img src="https://images.unsplash.com/photo-1497486751825-1233686d5d80?w=800&h=600&fit=crop"
+                            alt="Featured Program">
+                    </div>
+                </div>
+                <div class="col-lg-6 order-lg-1">
+                    <div class="featured-content">
+                        <span class="featured-tag">Featured Program</span>
+                        <h2>Clean Water Initiative in Sub-Saharan Africa</h2>
+                        <p>Our flagship clean water program is transforming lives across rural communities in
+                            Sub-Saharan Africa. By combining sustainable infrastructure with AI-powered monitoring, we
+                            ensure that clean water access lasts for generations.</p>
+                        <p>Since launch, we've built 340+ wells serving over 200,000 people, with 98% still operational
+                            after 5 years.</p>
+                        <div class="featured-stats">
+                            <div>
+                                <div class="f-stat-num">340+</div>
+                                <div class="f-stat-lbl">Wells Built</div>
+                            </div>
+                            <div>
+                                <div class="f-stat-num">200K</div>
+                                <div class="f-stat-lbl">People Served</div>
+                            </div>
+                            <div>
+                                <div class="f-stat-num">98%</div>
+                                <div class="f-stat-lbl">Still Working</div>
+                            </div>
+                        </div>
+                        <a href="#" class="btn-featured">Learn More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA Section ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Be Part of the Change</h2>
+            <p>Your support helps us reach more communities and change more lives. Every contribution matters.</p>
+            <a href="donate_page.html" class="btn-cta-white">Donate Now <i class="fas fa-arrow-right ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <!-- Logo -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-start">
+
+                    <a href="home.html" class="d-inline-block mb-3">
+                        <img src="assts/logo/logo.png" class="img-fluid" style="max-height:120px;"
+                            alt="Captain Foundation AI">
+                    </a>
+
+                    <h4 class="fw-bold">
+                        Captain Foundation <span class="text-success">AI</span>
+                    </h4>
+
+                    <p class="text-light mt-3">
+                        Empowering communities through education, healthcare, and sustainable
+                        development worldwide with intelligent solutions.
+                    </p>
+
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Programs -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Programs</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Education</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Healthcare</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Economic</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Empowerment</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Environment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Organization -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Organization</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Our Team</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Annual Report</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Press</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Donate</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Volunteer</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Partner</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div class="col-lg-2 col-md-6 col-12">
+
+                    <h6 class="fw-bold mb-3">Stay Updated</h6>
+
+                    <p class="small text-light">
+                        Get updates about our programs and the communities we serve.
+                    </p>
+
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-success">Subscribe</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center text-center gap-2">
+
+                <small>
+                    © 2024 Captain Foundation AI. All rights reserved.
+                </small>
+
+                <small>
+                    Privacy Policy | Terms of Service
+                </small>
+
+                <small>
+                    Made with <i class="fas fa-heart text-danger"></i> for a better world
+                </small>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ===== Cookie Banner ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of
+            cookies.</div>
+        <div>
+            <button class="btn-cookie" onclick="closeCookie()">Decline</button>
+            <button class="btn-accept" onclick="closeCookie()">Accept All</button>
+        </div>
+    </div>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Cookie Banner
+        function closeCookie() {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Navbar shadow on scroll
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target && this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

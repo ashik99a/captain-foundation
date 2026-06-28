@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Captain Foundation AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5A;
+            --primary-light: #E8F5ED;
+            --primary-lighter: #F2FAF5;
+            --accent: #4F46E5;
+            --dark: #1a1a1a;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --border: #E5E7EB;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            background: #fff;
+            color: #374151;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .brand-logo img {
+            max-height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        .navbar {
+            padding: 14px 0;
+            background: #fff;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .nav-link {
+            color: #4B5563 !important;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 14px !important;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .btn-donate-nav {
+            background: var(--primary);
+            color: #fff !important;
+            border: 1px solid var(--primary);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-donate-nav:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .nav-icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B7280;
+            text-decoration: none;
+            margin-right: 8px;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        .page-header {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            padding: 70px 0 60px;
+            color: #fff;
+            text-align: center;
+        }
+
+        .page-header h1 {
+            font-size: 42px;
+            margin-bottom: 16px;
+        }
+
+        .page-header p {
+            font-size: 16px;
+            margin-bottom: 0;
+            opacity: .9;
+        }
+
+        .page-header .breadcrumb-wrap {
+            margin-top: 18px;
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .page-header .breadcrumb-wrap a {
+            color: rgba(255, 255, 255, .85);
+        }
+
+        .page-header .breadcrumb-wrap .current {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .blog-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            overflow: hidden;
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+        }
+
+        .blog-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .blog-card-body {
+            padding: 24px;
+        }
+
+        .blog-card h5 {
+            color: var(--dark);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .blog-card p {
+            color: var(--gray);
+            margin-bottom: 18px;
+        }
+
+        .blog-card .tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .blog-card .read-more {
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        .blog-intro {
+            padding: 60px 0;
+        }
+
+        .blog-intro h2 {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .blog-intro p {
+            max-width: 680px;
+            margin: 0 auto;
+            color: var(--gray);
+        }
+
+        footer {
+            background: #0f172a;
+            color: rgba(255, 255, 255, .78);
+            padding: 50px 0 25px;
+        }
+
+        footer h6 {
+            color: #fff;
+            margin-bottom: 18px;
+            font-size: 16px;
+        }
+
+        .footer-brand-wrap {
+            margin-bottom: 24px;
+        }
+
+        .footer-brand-wrap .name {
+            color: #fff;
+            font-weight: 700;
+            margin-top: 14px;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, .75);
+            transition: color .2s ease;
+        }
+
+        .footer-links a:hover {
+            color: #fff;
+        }
+
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            padding-top: 28px;
+            border-top: 1px solid rgba(255, 255, 255, .08);
+            font-size: 14px;
+        }
+
+        .footer-bottom a {
+            color: rgba(255, 255, 255, .75);
+        }
+
+        @media (max-width: 768px) {
+            .page-header {
+                padding: 50px 0 40px;
+            }
+
+            .page-header h1 {
+                font-size: 32px;
+            }
+
+            .navbar-collapse {
+                margin-top: 1rem;
+            }
+
+            .navbar-nav {
+                gap: 0.5rem;
+            }
+
+            .navbar-nav .nav-link {
+                width: 100%;
+                padding: 10px 0 !important;
+            }
+
+            .btn-donate-nav {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="brand-logo" href="home.html">
+                <div class="">
+                    <img class="img-fluid d-block" src="assts/logo/logo.png" alt="Captain Foundation AI"
+                        style="max-height:70px;width:auto;display:block;">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#get-involved">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donate_page.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="donate_page.html" class="btn btn-donate-nav">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-header">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Read the latest stories, impact updates, and insights from Captain Foundation AI.</p>
+            <div class="breadcrumb-wrap">
+                <a href="home.html">Home</a> <span>/</span> <span class="current">Blog</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="blog-intro">
+        <div class="container text-center">
+            <h2>Insights that Inspire Action</h2>
+            <p>Explore our latest news, program updates, and real stories from the communities we serve.</p>
+        </div>
+    </section>
+
+    <section class="container pb-5">
+        <div class="row g-4">
+            <div class="col-md-6">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1499510318561-5da78afecd3d?w=900&h=600&fit=crop"
+                        alt="Volunteer Spotlight">
+                    <div class="blog-card-body">
+                        <span class="tag"><i class="fas fa-hands-helping"></i> Volunteers</span>
+                        <h5>Volunteer Spotlight: Making a Difference</h5>
+                        <p>Meet the volunteers bringing critical programs to life in communities around the world.</p>
+                        <a class="read-more" href="#">Read Article <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=900&h=600&fit=crop"
+                        alt="Clean Water Project">
+                    <div class="blog-card-body">
+                        <span class="tag"><i class="fas fa-tint"></i> Impact</span>
+                        <h5>How Clean Water Access Changes Lives</h5>
+                        <p>Discover the impact of clean water programs on education, health, and economic opportunity.
+                        </p>
+                        <a class="read-more" href="singlepost.html">Read Article <i
+                                class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=900&h=600&fit=crop"
+                        alt="Community Development">
+                    <div class="blog-card-body">
+                        <span class="tag"><i class="fas fa-users"></i> Community</span>
+                        <h5>Community-Led Solutions for Lasting Growth</h5>
+                        <p>Why local leadership is the foundation of sustainable development for every program.</p>
+                        <a class="read-more" href="#">Read Article <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </article>
+            </div>
+            <div class="col-md-6">
+                <article class="blog-card">
+                    <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?w=900&h=600&fit=crop"
+                        alt="AI for Good">
+                    <div class="blog-card-body">
+                        <span class="tag"><i class="fas fa-robot"></i> AI</span>
+                        <h5>AI for Good: Smarter Aid, Stronger Outcomes</h5>
+                        <p>Learn how artificial intelligence helps us reach the right people with the right support.</p>
+                        <a class="read-more" href="#">Read Article <i class="fas fa-arrow-right ms-1"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <!-- Logo -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-start">
+
+                    <a href="home.html" class="d-inline-block mb-3">
+                        <img src="assts/logo/logo.png" class="img-fluid" style="max-height:120px;"
+                            alt="Captain Foundation AI">
+                    </a>
+
+                    <h4 class="fw-bold">
+                        Captain Foundation <span class="text-success">AI</span>
+                    </h4>
+
+                    <p class="text-light mt-3">
+                        Empowering communities through education, healthcare, and sustainable
+                        development worldwide with intelligent solutions.
+                    </p>
+
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Programs -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Programs</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Education</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Healthcare</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Economic</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Empowerment</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Environment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Organization -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Organization</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Our Team</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Annual Report</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Press</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Donate</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Volunteer</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Partner</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div class="col-lg-2 col-md-6 col-12">
+
+                    <h6 class="fw-bold mb-3">Stay Updated</h6>
+
+                    <p class="small text-light">
+                        Get updates about our programs and the communities we serve.
+                    </p>
+
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-success">Subscribe</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center text-center gap-2">
+
+                <small>
+                    © 2024 Captain Foundation AI. All rights reserved.
+                </small>
+
+                <small>
+                    Privacy Policy | Terms of Service
+                </small>
+
+                <small>
+                    Made with <i class="fas fa-heart text-danger"></i> for a better world
+                </small>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

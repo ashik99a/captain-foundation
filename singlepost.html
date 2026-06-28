@@ -1,0 +1,1599 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Impact of Clean Water Access - Captain Foundation AI</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Lora:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5A;
+            --primary-light: #E8F5ED;
+            --primary-lighter: #F2FAF5;
+            --accent: #4F46E5;
+            --accent-light: #EEF2FF;
+            --dark: #1a1a1a;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --border: #E5E7EB;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: #374151;
+            background: #fff;
+        }
+
+        /* ===== CUSTOM LOGO ===== */
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-svg {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand-text .name {
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--dark);
+            letter-spacing: -0.3px;
+        }
+
+        .brand-text .name .ai-badge {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            font-weight: 700;
+            vertical-align: middle;
+        }
+
+        .brand-text .tag {
+            font-size: 10px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            padding: 14px 0;
+            background: #fff;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .nav-link {
+            color: #4B5563 !important;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 14px !important;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .btn-donate-nav {
+            background: var(--primary);
+            color: #fff !important;
+            border: 1px solid var(--primary);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-donate-nav:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+        }
+
+        .nav-icon-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #6B7280;
+            text-decoration: none;
+            margin-right: 4px;
+        }
+
+        .nav-icon-btn:hover {
+            color: var(--primary);
+            background: var(--primary-light);
+        }
+
+        /* ===== Article Header ===== */
+        .article-header {
+            background: var(--light-gray);
+            padding: 50px 0 40px;
+        }
+
+        .breadcrumb-wrap {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .breadcrumb-wrap a {
+            color: var(--gray);
+            text-decoration: none;
+        }
+
+        .breadcrumb-wrap a:hover {
+            color: var(--primary);
+        }
+
+        .breadcrumb-wrap span {
+            margin: 0 8px;
+        }
+
+        .article-category {
+            display: inline-block;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 16px;
+        }
+
+        .article-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            letter-spacing: -0.5px;
+        }
+
+        .article-excerpt {
+            font-size: 18px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 28px;
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .meta-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .meta-avatar {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            overflow: hidden;
+        }
+
+        .meta-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .meta-author-info {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.3;
+        }
+
+        .meta-author-name {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 14px;
+        }
+
+        .meta-author-role {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: var(--gray);
+            font-size: 13px;
+        }
+
+        .meta-item i {
+            color: var(--primary);
+        }
+
+        /* ===== Featured Image ===== */
+        .article-featured-image {
+            margin-top: 40px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .article-featured-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ===== Article Content ===== */
+        .article-section {
+            padding: 60px 0;
+        }
+
+        .article-content {
+            font-family: 'Lora', serif;
+            font-size: 18px;
+            line-height: 1.8;
+            color: #374151;
+        }
+
+        .article-content p {
+            margin-bottom: 24px;
+        }
+
+        .article-content h2 {
+            font-family: 'Inter', sans-serif;
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--dark);
+            margin: 40px 0 20px;
+            line-height: 1.3;
+        }
+
+        .article-content h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--dark);
+            margin: 32px 0 16px;
+        }
+
+        .article-content blockquote {
+            background: var(--primary-lighter);
+            border-left: 4px solid var(--primary);
+            padding: 24px 28px;
+            margin: 32px 0;
+            border-radius: 0 12px 12px 0;
+            font-style: italic;
+            font-size: 20px;
+            color: var(--dark);
+            line-height: 1.6;
+            position: relative;
+        }
+
+        .article-content blockquote::before {
+            content: '"';
+            font-size: 60px;
+            color: var(--primary);
+            position: absolute;
+            top: -10px;
+            left: 16px;
+            font-family: 'Lora', serif;
+            opacity: 0.3;
+        }
+
+        .article-content ul,
+        .article-content ol {
+            margin: 20px 0 24px 24px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .article-content strong {
+            color: var(--dark);
+            font-weight: 600;
+        }
+
+        .article-content a {
+            color: var(--primary);
+            text-decoration: none;
+            border-bottom: 1px solid rgba(0, 168, 107, 0.3);
+        }
+
+        .article-content a:hover {
+            border-bottom-color: var(--primary);
+        }
+
+        /* Article Inline Image */
+        .article-inline-image {
+            margin: 32px 0;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .article-inline-image img {
+            width: 100%;
+            height: auto;
+        }
+
+        .image-caption {
+            text-align: center;
+            color: var(--gray);
+            font-size: 13px;
+            font-style: italic;
+            margin-top: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Tags */
+        .article-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 40px 0;
+            padding-top: 32px;
+            border-top: 1px solid var(--border);
+        }
+
+        .tag-pill {
+            background: var(--light-gray);
+            color: var(--gray);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .tag-pill:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* Share Buttons */
+        .share-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 24px 0 40px;
+        }
+
+        .share-label {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .share-btn {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.2s;
+            font-size: 14px;
+        }
+
+        .share-btn.fb {
+            background: #1877F2;
+        }
+
+        .share-btn.tw {
+            background: #000;
+        }
+
+        .share-btn.li {
+            background: #0A66C2;
+        }
+
+        .share-btn.wa {
+            background: #25D366;
+        }
+
+        .share-btn.li2 {
+            background: var(--primary);
+        }
+
+        .share-btn:hover {
+            transform: translateY(-2px);
+            color: #fff;
+        }
+
+        /* Author Bio */
+        .author-bio {
+            background: var(--light-gray);
+            border-radius: 16px;
+            padding: 32px;
+            display: flex;
+            gap: 24px;
+            margin: 40px 0;
+            align-items: center;
+        }
+
+        .author-bio-avatar {
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 4px solid #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+
+        .author-bio-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .author-bio-content h5 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+        }
+
+        .author-bio-content .role {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .author-bio-content p {
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .author-social {
+            display: flex;
+            gap: 8px;
+            margin-top: 12px;
+        }
+
+        .author-social a {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 12px;
+            transition: all 0.2s;
+        }
+
+        .author-social a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ===== Sidebar ===== */
+        .sidebar-card {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 24px;
+        }
+
+        .sidebar-card h5 {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 18px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .sidebar-post {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border);
+            text-decoration: none;
+        }
+
+        .sidebar-post:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .sidebar-post-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .sidebar-post-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .sidebar-post-content h6 {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+            line-height: 1.4;
+            margin-bottom: 4px;
+        }
+
+        .sidebar-post-content span {
+            color: var(--gray);
+            font-size: 12px;
+        }
+
+        /* Categories List */
+        .cat-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .cat-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cat-list li:last-child {
+            border-bottom: none;
+        }
+
+        .cat-list a {
+            color: var(--dark);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .cat-list a:hover {
+            color: var(--primary);
+        }
+
+        .cat-count {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 2px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+
+        /* Newsletter Sidebar */
+        .newsletter-sidebar {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            color: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            text-align: center;
+        }
+
+        .newsletter-sidebar h5 {
+            color: #fff;
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .newsletter-sidebar p {
+            font-size: 13px;
+            opacity: 0.95;
+            margin-bottom: 16px;
+        }
+
+        .newsletter-sidebar input {
+            width: 100%;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 8px;
+            font-size: 13px;
+        }
+
+        .newsletter-sidebar button {
+            width: 100%;
+            background: #fff;
+            color: var(--primary);
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .newsletter-sidebar button:hover {
+            background: #f9fafb;
+        }
+
+        /* ===== Comments Section ===== */
+        .comments-section {
+            padding: 0 0 60px;
+        }
+
+        .comments-section h3 {
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 28px;
+        }
+
+        .comment-item {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .comment-item.reply {
+            margin-left: 60px;
+        }
+
+        .comment-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 16px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+
+        .comment-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .comment-content h6 {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 15px;
+            margin-bottom: 2px;
+        }
+
+        .comment-content .comment-date {
+            color: var(--gray);
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .comment-content p {
+            color: #4B5563;
+            font-size: 14px;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .comment-reply {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            margin-top: 8px;
+            display: inline-block;
+        }
+
+        .comment-reply:hover {
+            color: var(--primary-dark);
+        }
+
+        /* Comment Form */
+        .comment-form {
+            background: var(--light-gray);
+            border-radius: 12px;
+            padding: 28px;
+            margin-top: 32px;
+        }
+
+        .comment-form h4 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .comment-form .form-control {
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            padding: 10px 14px;
+            font-size: 14px;
+        }
+
+        .comment-form .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.1);
+        }
+
+        .btn-comment {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-comment:hover {
+            background: var(--primary-dark);
+            color: #fff;
+        }
+
+        /* ===== Related Posts ===== */
+        .related-section {
+            padding: 60px 0;
+            background: var(--light-gray);
+        }
+
+        .related-section h2 {
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #0F1419;
+            color: #9CA3AF;
+            padding: 60px 0 30px;
+        }
+
+        footer h6 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand-wrap .name {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .footer-brand-wrap .name .ai-badge {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #9CA3AF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-subscribe {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-subscribe input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 13px;
+        }
+
+        .footer-subscribe input::placeholder {
+            color: #6B7280;
+        }
+
+        .footer-subscribe button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+            cursor: pointer;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 40px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        .footer-bottom a {
+            color: #9CA3AF;
+            text-decoration: none;
+            margin-left: 16px;
+        }
+
+        .footer-bottom a:hover {
+            color: var(--primary);
+        }
+
+        /* Back to Top */
+        .back-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 42px;
+            height: 42px;
+            background: var(--primary);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(0, 168, 107, 0.3);
+            transition: all 0.2s;
+            z-index: 999;
+        }
+
+        .back-top:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* Reading Progress Bar */
+        .reading-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: var(--primary);
+            z-index: 9999;
+            transition: width 0.1s;
+        }
+
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 28px;
+            }
+
+            .article-excerpt {
+                font-size: 16px;
+            }
+
+            .article-content {
+                font-size: 16px;
+            }
+
+            .article-content h2 {
+                font-size: 24px;
+            }
+
+            .author-bio {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .author-social {
+                justify-content: center;
+            }
+
+            .comment-item.reply {
+                margin-left: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress" id="readingProgress"></div>
+
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="brand-logo" href="home.html">
+                <div class="">
+                    <img class="img-fluid d-block" src="assts/logo/logo.png" alt="Captain Foundation AI"
+                        style="max-height:70px;width:auto;display:block;">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#programs">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#get-involved">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donate_page.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="#" class="nav-icon-btn"><i class="fas fa-moon"></i></a>
+                <a href="donate_page.html" class="btn btn-donate-nav">Donate Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Article Header ===== -->
+    <header class="article-header">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-9">
+                    <div class="breadcrumb-wrap">
+                        <a href="home.html">Home</a> <span>/</span>
+                        <a href="blog.html">Blog</a> <span>/</span>
+                        <span>The Impact of Clean Water Access</span>
+                    </div>
+                    <span class="article-category">Impact</span>
+                    <h1 class="article-title">The Impact of Clean Water Access: Transforming Communities Worldwide</h1>
+                    <p class="article-excerpt">How clean water initiatives are transforming communities, saving lives,
+                        and creating a foundation for sustainable development around the world.</p>
+
+                    <div class="article-meta">
+                        <div class="meta-author">
+                            <div class="meta-avatar">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=100&h=100&fit=crop&crop=face"
+                                    alt="Grace Okafor">
+                            </div>
+                            <div class="meta-author-info">
+                                <span class="meta-author-name">Grace Okafor</span>
+                                <span class="meta-author-role">Executive Director</span>
+                            </div>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-calendar"></i>
+                            <span>Feb 15, 2026</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-clock"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <div class="meta-item">
+                            <i class="far fa-eye"></i>
+                            <span>2.4k views</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Image -->
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="article-featured-image">
+                        <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&h=600&fit=crop"
+                            alt="Clean Water Access">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Article Content ===== -->
+    <section class="article-section">
+        <div class="container">
+            <div class="row g-5">
+                <!-- Main Content -->
+                <div class="col-lg-8">
+                    <article class="article-content">
+                        <p>Access to clean water is not just a basic human need—it's the foundation upon which healthy
+                            communities are built. At <strong>Captain Foundation AI</strong>, we've witnessed firsthand
+                            how providing clean water transforms entire villages, empowering families to break free from
+                            the cycle of poverty and disease.</p>
+
+                        <p>According to the World Health Organization, approximately <strong>2.2 billion people</strong>
+                            lack access to safely managed drinking water services. This isn't just a statistic—these are
+                            mothers, children, and elders walking hours each day just to collect water that may make
+                            them sick.</p>
+
+                        <h2>The Crisis We're Addressing</h2>
+
+                        <p>In many parts of the world, the water crisis is intertwined with broader issues of poverty,
+                            education, and health. When families spend hours each day collecting water:</p>
+
+                        <ul>
+                            <li>Children miss school, limiting their educational opportunities</li>
+                            <li>Parents lose time for income-generating activities</li>
+                            <li>Communities face increased rates of waterborne diseases</li>
+                            <li>Women's safety is often compromised during long water collection journeys</li>
+                        </ul>
+
+                        <blockquote>
+                            "When we brought clean water to our village, everything changed. My daughter started school
+                            on time, my husband could work his land, and we hadn't lost a child to waterborne illness in
+                            three years."
+                            <br><br>
+                            <strong>— Amina, Community Leader, Northern Nigeria</strong>
+                        </blockquote>
+
+                        <h2>Our Approach: Sustainable Water Solutions</h2>
+
+                        <p>At Captain Foundation AI, we don't just build wells—we build <strong>sustainable water
+                                systems</strong> that communities can maintain for generations. Our approach combines
+                            proven technology with local knowledge and AI-powered monitoring.</p>
+
+                        <h3>1. Deep Borehole Wells</h3>
+
+                        <p>Our primary solution involves drilling deep borehole wells that tap into underground
+                            aquifers, providing a reliable water source year-round. Each well is equipped with:</p>
+
+                        <ul>
+                            <li>Solar-powered pumping systems</li>
+                            <li>Multi-tier filtration systems</li>
+                            <li>Smart sensors for water quality monitoring</li>
+                            <li>Easy maintenance protocols</li>
+                        </ul>
+
+                        <div class="article-inline-image">
+                            <img src="https://images.unsplash.com/photo-1541544537156-7627a7a4aa1c?w=900&h=500&fit=crop"
+                                alt="Water Well">
+                            <p class="image-caption">A newly installed borehole well serving 500+ community members in
+                                rural Kenya</p>
+                        </div>
+
+                        <h3>2. AI-Powered Monitoring</h3>
+
+                        <p>What sets our program apart is the integration of artificial intelligence. Each well is
+                            equipped with IoT sensors that monitor:</p>
+
+                        <ul>
+                            <li>Water quality parameters in real-time</li>
+                            <li>Pump performance and maintenance needs</li>
+                            <li>Usage patterns to optimize distribution</li>
+                            <li>Early warning systems for potential issues</li>
+                        </ul>
+
+                        <p>This data allows our field teams to address problems before they become crises, ensuring
+                            consistent water access for communities.</p>
+
+                        <h2>Real Impact: Stories from the Field</h2>
+
+                        <p>Since 2014, we've installed <strong>over 340 water systems</strong> across 12 countries,
+                            serving more than <strong>200,000 people</strong>. But numbers only tell part of the story.
+                        </p>
+
+                        <p>In the village of <strong>Kibera, Kenya</strong>, our clean water project reduced waterborne
+                            illness rates by <strong>78%</strong> within the first year. School attendance for girls
+                            increased by 45%, and local economic activity grew as residents had more time for productive
+                            work.</p>
+
+                        <h3>The Ripple Effect</h3>
+
+                        <p>Clean water creates a ripple effect that touches every aspect of community life:</p>
+
+                        <ol>
+                            <li><strong>Health:</strong> Dramatic reduction in waterborne diseases like cholera,
+                                typhoid, and diarrhea</li>
+                            <li><strong>Education:</strong> Children, especially girls, attend school more regularly
+                            </li>
+                            <li><strong>Economy:</strong> Time saved from water collection translates to productive work
+                            </li>
+                            <li><strong>Gender Equality:</strong> Women gain time for education, business, and family
+                            </li>
+                            <li><strong>Food Security:</strong> Clean water enables kitchen gardens and small-scale
+                                agriculture</li>
+                        </ol>
+
+                        <h2>Looking Forward: Our 2030 Vision</h2>
+
+                        <p>Our goal is ambitious but achievable: by 2030, we aim to provide clean water access to
+                            <strong>1 million people</strong> across 25 countries. This requires scaling our operations
+                            while maintaining the quality and sustainability that defines our work.
+                        </p>
+
+                        <p>With your support, we can turn this vision into reality. Every donation, every share, every
+                            conversation about water access brings us closer to a world where no child dies from
+                            preventable waterborne illness.</p>
+
+                        <h2>How You Can Help</h2>
+
+                        <p>There are several ways you can join our mission to provide clean water worldwide:</p>
+
+                        <ul>
+                            <li><strong>Donate:</strong> $50 can provide clean water to one person for an entire year
+                            </li>
+                            <li><strong>Sponsor a well:</strong> $5,000 fully funds a community water system</li>
+                            <li><strong>Volunteer:</strong> Use your skills in engineering, data science, or community
+                                development</li>
+                            <li><strong>Spread the word:</strong> Share our story and raise awareness</li>
+                        </ul>
+
+                        <p>Together, we can ensure that access to clean water is not a privilege, but a universal right.
+                            Join us in this vital mission.</p>
+                    </article>
+
+                    <!-- Tags -->
+                    <div class="article-tags">
+                        <a href="#" class="tag-pill">#CleanWater</a>
+                        <a href="#" class="tag-pill">#Sustainability</a>
+                        <a href="#" class="tag-pill">#GlobalHealth</a>
+                        <a href="#" class="tag-pill">#CommunityDevelopment</a>
+                        <a href="#" class="tag-pill">#AIforGood</a>
+                    </div>
+
+                    <!-- Share Section -->
+                    <div class="share-section">
+                        <span class="share-label">Share this article:</span>
+                        <a href="#" class="share-btn fb" title="Share on Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="share-btn tw" title="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="share-btn li" title="Share on LinkedIn"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="share-btn wa" title="Share on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="share-btn li2" title="Copy Link"><i class="fas fa-link"></i></a>
+                    </div>
+
+                    <!-- Author Bio -->
+                    <div class="author-bio">
+                        <div class="author-bio-avatar">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200&h=200&fit=crop&crop=face"
+                                alt="Grace Okafor">
+                        </div>
+                        <div class="author-bio-content">
+                            <h5>Grace Okafor</h5>
+                            <p class="role">Executive Director</p>
+                            <p>Grace has over 15 years of experience in international development and humanitarian work.
+                                She founded Captain Foundation AI with a vision to combine technology with grassroots
+                                community empowerment.</p>
+                            <div class="author-social">
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="#"><i class="fas fa-globe"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Comments Section -->
+                    <div class="comments-section">
+                        <h3>Comments (3)</h3>
+
+                        <div class="comment-item">
+                            <div class="comment-avatar">JD</div>
+                            <div class="comment-content">
+                                <h6>John Doe</h6>
+                                <div class="comment-date">Feb 16, 2026 at 10:23 AM</div>
+                                <p>This is incredibly inspiring work. The integration of AI with water systems is
+                                    brilliant. How can I get involved as a data scientist?</p>
+                                <a href="#" class="comment-reply">Reply</a>
+                            </div>
+                        </div>
+
+                        <div class="comment-item reply">
+                            <div class="comment-avatar">
+                                <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=80&h=80&fit=crop&crop=face"
+                                    alt="Grace">
+                            </div>
+                            <div class="comment-content">
+                                <h6>Grace Okafor <span
+                                        style="color: var(--primary); font-size: 12px; font-weight: 500;">(Author)</span>
+                                </h6>
+                                <div class="comment-date">Feb 16, 2026 at 2:15 PM</div>
+                                <p>Thank you, John! We'd love to have you on board. Please reach out to us through our
+                                    contact form and mention this comment. We'll connect you with our technical team.
+                                </p>
+                                <a href="#" class="comment-reply">Reply</a>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-avatar">SM</div>
+                            <div class="comment-content">
+                                <h6>Sarah Mitchell</h6>
+                                <div class="comment-date">Feb 17, 2026 at 8:45 AM</div>
+                                <p>The 78% reduction in waterborne illness is remarkable. This proves that targeted
+                                    interventions can have massive impact. Proud to be a monthly donor!</p>
+                                <a href="#" class="comment-reply">Reply</a>
+                            </div>
+                        </div>
+
+                        <!-- Comment Form -->
+                        <div class="comment-form">
+                            <h4>Leave a Comment</h4>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="4" placeholder="Your Comment"
+                                            required></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-comment">Post Comment <i
+                                                class="fas fa-paper-plane ms-2"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="col-lg-4">
+                    <!-- Recent Posts -->
+                    <div class="sidebar-card">
+                        <h5>Recent Posts</h5>
+                        <a href="#" class="sidebar-post">
+                            <div class="sidebar-post-img">
+                                <img src="https://images.unsplash.com/photo-1559027612-cf4627aaf070?w=150&h=150&fit=crop"
+                                    alt="">
+                            </div>
+                            <div class="sidebar-post-content">
+                                <h6>Volunteer Spotlight: Making a Difference</h6>
+                                <span>Feb 8, 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="sidebar-post">
+                            <div class="sidebar-post-img">
+                                <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=150&h=150&fit=crop"
+                                    alt="">
+                            </div>
+                            <div class="sidebar-post-content">
+                                <h6>5 Ways to Support Your Community</h6>
+                                <span>Jan 28, 2026</span>
+                            </div>
+                        </a>
+                        <a href="#" class="sidebar-post">
+                            <div class="sidebar-post-img">
+                                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=150&h=150&fit=crop"
+                                    alt="">
+                            </div>
+                            <div class="sidebar-post-content">
+                                <h6>Fundraising Ideas That Actually Work</h6>
+                                <span>Jan 15, 2026</span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Categories -->
+                    <div class="sidebar-card">
+                        <h5>Categories</h5>
+                        <ul class="cat-list">
+                            <li><a href="#">Impact <span class="cat-count">12</span></a></li>
+                            <li><a href="#">Volunteers <span class="cat-count">8</span></a></li>
+                            <li><a href="#">Community <span class="cat-count">15</span></a></li>
+                            <li><a href="#">Fundraising <span class="cat-count">6</span></a></li>
+                            <li><a href="#">Sustainability <span class="cat-count">10</span></a></li>
+                            <li><a href="#">Governance <span class="cat-count">4</span></a></li>
+                        </ul>
+                    </div>
+
+                    <!-- Newsletter -->
+                    <div class="newsletter-sidebar">
+                        <h5>📧 Newsletter</h5>
+                        <p>Get the latest articles delivered to your inbox.</p>
+                        <input type="email" placeholder="Your email">
+                        <button>Subscribe</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Related Posts ===== -->
+    <section class="related-section">
+        <div class="container">
+            <h2>Related Articles</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="blog-card"
+                        style="background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); height: 100%;">
+                        <div style="aspect-ratio: 16/10; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=400&h=250&fit=crop"
+                                style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                        </div>
+                        <div style="padding: 20px;">
+                            <span
+                                style="background: rgba(0, 168, 107, 0.1); color: var(--primary); padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;">Sustainability</span>
+                            <h6 style="font-weight: 700; color: var(--dark); margin: 12px 0 8px; font-size: 16px;">
+                                Sustainable Development in Action</h6>
+                            <p style="color: var(--gray); font-size: 13px; margin: 0;">Real stories of sustainable
+                                development projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card"
+                        style="background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); height: 100%;">
+                        <div style="aspect-ratio: 16/10; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1559027612-cf4627aaf070?w=400&h=250&fit=crop"
+                                style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                        </div>
+                        <div style="padding: 20px;">
+                            <span
+                                style="background: rgba(0, 168, 107, 0.1); color: var(--primary); padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;">Volunteers</span>
+                            <h6 style="font-weight: 700; color: var(--dark); margin: 12px 0 8px; font-size: 16px;">
+                                Volunteer Spotlight: Making a Difference</h6>
+                            <p style="color: var(--gray); font-size: 13px; margin: 0;">Celebrating volunteers who
+                                dedicate their time.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="blog-card"
+                        style="background: #fff; border-radius: 12px; overflow: hidden; border: 1px solid var(--border); height: 100%;">
+                        <div style="aspect-ratio: 16/10; overflow: hidden;">
+                            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=400&h=250&fit=crop"
+                                style="width: 100%; height: 100%; object-fit: cover;" alt="">
+                        </div>
+                        <div style="padding: 20px;">
+                            <span
+                                style="background: rgba(0, 168, 107, 0.1); color: var(--primary); padding: 3px 10px; border-radius: 6px; font-size: 11px; font-weight: 600;">Community</span>
+                            <h6 style="font-weight: 700; color: var(--dark); margin: 12px 0 8px; font-size: 16px;">5
+                                Ways to Support Your Community</h6>
+                            <p style="color: var(--gray); font-size: 13px; margin: 0;">Simple yet powerful ways to make
+                                a difference.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <!-- Logo -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-start">
+
+                    <a href="home.html" class="d-inline-block mb-3">
+                        <img src="assts/logo/logo.png" class="img-fluid" style="max-height:120px;"
+                            alt="Captain Foundation AI">
+                    </a>
+
+                    <h4 class="fw-bold">
+                        Captain Foundation <span class="text-success">AI</span>
+                    </h4>
+
+                    <p class="text-light mt-3">
+                        Empowering communities through education, healthcare, and sustainable
+                        development worldwide with intelligent solutions.
+                    </p>
+
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Programs -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Programs</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Education</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Healthcare</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Economic</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Empowerment</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Environment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Organization -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Organization</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Our Team</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Annual Report</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Press</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Donate</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Volunteer</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Partner</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div class="col-lg-2 col-md-6 col-12">
+
+                    <h6 class="fw-bold mb-3">Stay Updated</h6>
+
+                    <p class="small text-light">
+                        Get updates about our programs and the communities we serve.
+                    </p>
+
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-success">Subscribe</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center text-center gap-2">
+
+                <small>
+                    © 2024 Captain Foundation AI. All rights reserved.
+                </small>
+
+                <small>
+                    Privacy Policy | Terms of Service
+                </small>
+
+                <small>
+                    Made with <i class="fas fa-heart text-danger"></i> for a better world
+                </small>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <a href="#" class="back-top"><i class="fas fa-arrow-up"></i></a>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Reading Progress Bar
+        window.addEventListener('scroll', () => {
+            const article = document.querySelector('.article-content');
+            if (!article) return;
+
+            const articleTop = article.offsetTop;
+            const articleHeight = article.offsetHeight;
+            const windowHeight = window.innerHeight;
+            const scrollY = window.scrollY;
+
+            const start = articleTop - windowHeight;
+            const end = articleTop + articleHeight - windowHeight;
+            const progress = Math.max(0, Math.min(100, ((scrollY - start) / (end - start)) * 100));
+
+            document.getElementById('readingProgress').style.width = progress + '%';
+
+            // Navbar shadow
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target && this.getAttribute('href') !== '#') {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captain Foundation AI - Empowering Change Through Intelligence</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #00A86B;
+            --primary-dark: #008F5A;
+            --primary-light: #E8F5ED;
+            --primary-lighter: #F2FAF5;
+            --accent: #4F46E5;
+            --accent-light: #EEF2FF;
+            --dark: #1a1a1a;
+            --gray: #6B7280;
+            --light-gray: #F9FAFB;
+            --border: #E5E7EB;
+        }
+
+        * {
+            font-family: 'Inter', sans-serif;
+        }
+
+        body {
+            color: #374151;
+            background: #fff;
+        }
+
+
+
+        .logo-svg {
+            width: 38px;
+            height: 38px;
+            flex-shrink: 0;
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+        }
+
+        .brand-text .name {
+            font-weight: 800;
+            font-size: 17px;
+            color: var(--dark);
+            letter-spacing: -0.3px;
+        }
+
+        .brand-text .name .ai-badge {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: #fff;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            font-weight: 700;
+            vertical-align: middle;
+        }
+
+        .brand-text .tag {
+            font-size: 10px;
+            color: var(--gray);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        /* ===== Navbar ===== */
+        .navbar {
+            padding: 14px 0;
+            background: #fff;
+            border-bottom: 1px solid #f3f4f6;
+        }
+
+        .nav-link {
+            color: #4B5563 !important;
+            font-weight: 500;
+            font-size: 14px;
+            padding: 8px 14px !important;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--primary) !important;
+        }
+
+        .btn-primary-custom {
+            background: var(--primary);
+            color: #fff;
+            border: 1px solid var(--primary);
+            padding: 8px 18px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.2s;
+        }
+
+        .btn-primary-custom:hover {
+            background: var(--primary-dark);
+            border-color: var(--primary-dark);
+            color: #fff;
+        }
+
+        .brand-logo img {
+            max-height: 70px;
+            width: auto;
+            display: block;
+        }
+
+        /* ===== Hero ===== */
+        .hero-section {
+            background: var(--primary-light);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(79, 70, 229, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .badge-pill {
+            display: inline-flex;
+            align-items: center;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .badge-pill i {
+            margin-right: 6px;
+        }
+
+        .hero-title {
+            font-size: 56px;
+            font-weight: 800;
+            color: var(--dark);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero-title .highlight {
+            color: var(--primary);
+        }
+
+        .hero-text {
+            color: var(--gray);
+            font-size: 16px;
+            max-width: 540px;
+            margin: 0 auto 32px;
+            line-height: 1.6;
+        }
+
+        .btn-donate {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            transition: all 0.2s;
+        }
+
+        .btn-donate:hover {
+            background: var(--primary-dark);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .btn-outline-secondary {
+            background: #fff;
+            border: 1px solid #fff;
+            color: var(--dark);
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+        }
+
+        .btn-outline-secondary:hover {
+            background: #f9fafb;
+            color: var(--dark);
+        }
+
+        /* ===== Stats Hero ===== */
+        .stats-hero {
+            padding: 40px 0 60px;
+            background: var(--primary-light);
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 36px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        /* ===== Image Section ===== */
+        .image-section {
+            padding: 0 0 60px;
+            background: var(--primary-light);
+        }
+
+        .image-card {
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            aspect-ratio: 16/8;
+            background: #ddd;
+        }
+
+        .image-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== Light Stats ===== */
+        .light-stats {
+            background: var(--light-gray);
+            padding: 50px 0;
+        }
+
+        .light-stat-number {
+            font-size: 30px;
+            font-weight: 800;
+            color: var(--dark);
+        }
+
+        .light-stat-label {
+            font-size: 13px;
+            color: var(--gray);
+        }
+
+        /* ===== Section Title ===== */
+        .section-tag {
+            display: inline-block;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 500;
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: var(--dark);
+            margin-bottom: 16px;
+        }
+
+        .section-text {
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* ===== Mission Section ===== */
+        .mission-section {
+            padding: 80px 0;
+        }
+
+        .mission-list .mission-item {
+            display: flex;
+            gap: 14px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .mission-list .mission-item:last-child {
+            border-bottom: none;
+        }
+
+        .mission-icon {
+            width: 36px;
+            height: 36px;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .mission-content h6 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 4px;
+            font-size: 15px;
+        }
+
+        .mission-content p {
+            color: var(--gray);
+            font-size: 14px;
+            margin: 0;
+            line-height: 1.5;
+        }
+
+        .mission-image {
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ===== Programs ===== */
+        .programs-section {
+            background: var(--light-gray);
+            padding: 80px 0;
+        }
+
+        .program-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            border: 1px solid var(--border);
+            transition: all 0.3s;
+            height: 100%;
+        }
+
+        .program-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            border-color: var(--primary);
+        }
+
+        .program-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 16px;
+            font-size: 18px;
+        }
+
+        .program-card h5 {
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .program-card p {
+            color: var(--gray);
+            font-size: 13px;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+
+        .learn-more {
+            color: var(--primary);
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .learn-more:hover {
+            color: var(--primary-dark);
+        }
+
+        /* ===== Numbers Section ===== */
+        .numbers-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .number-stat .num {
+            font-size: 40px;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1;
+        }
+
+        .number-stat .lbl {
+            font-size: 14px;
+            color: var(--gray);
+            margin-top: 4px;
+        }
+
+        /* ===== Progress ===== */
+        .progress-section {
+            padding: 60px 0 80px;
+        }
+
+        .progress-item {
+            margin-bottom: 28px;
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+
+        .progress {
+            height: 8px;
+            background: #E5E7EB;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-bar-custom {
+            background: var(--primary);
+            height: 100%;
+            border-radius: 4px;
+            transition: width 1.5s ease;
+        }
+
+        /* ===== Testimonials ===== */
+        .testimonials-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .testimonial-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            height: 100%;
+        }
+
+        .testimonial-text {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .testimonial-user {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--primary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-weight: 700;
+            font-size: 14px;
+        }
+
+        .user-name {
+            font-weight: 600;
+            color: var(--dark);
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        .user-role {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .testimonial-nav {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 32px;
+        }
+
+        .testimonial-nav .dot {
+            width: 24px;
+            height: 4px;
+            background: #D1D5DB;
+            border-radius: 2px;
+            cursor: pointer;
+        }
+
+        .testimonial-nav .dot.active {
+            background: var(--primary);
+        }
+
+        /* ===== Join Mission ===== */
+        .join-mission {
+            padding: 80px 0;
+        }
+
+        .action-card {
+            text-align: center;
+            padding: 32px 24px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            height: 100%;
+            transition: all 0.3s;
+        }
+
+        .action-card:hover {
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .action-icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(0, 168, 107, 0.1);
+            color: var(--primary);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 20px;
+        }
+
+        .action-card h5 {
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 8px;
+        }
+
+        .action-card p {
+            color: var(--gray);
+            font-size: 13px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .btn-outline-primary-custom {
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 13px;
+            background: transparent;
+            transition: all 0.2s;
+        }
+
+        .btn-outline-primary-custom:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        /* ===== FAQ ===== */
+        .faq-section {
+            padding: 80px 0;
+            background: var(--light-gray);
+        }
+
+        .faq-item {
+            background: #fff;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 18px 24px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            color: var(--dark);
+            font-size: 15px;
+        }
+
+        .faq-question i {
+            color: var(--gray);
+            transition: transform 0.3s;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            padding: 0 24px;
+            color: var(--gray);
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+            padding: 0 24px 20px;
+        }
+
+        /* ===== Donate CTA ===== */
+        .donate-cta {
+            background: var(--primary);
+            padding: 80px 0;
+            color: #fff;
+            text-align: center;
+        }
+
+        .donate-cta h2 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 12px;
+        }
+
+        .donate-cta p {
+            opacity: 0.9;
+            margin-bottom: 32px;
+            max-width: 560px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .donate-amounts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 16px;
+        }
+
+        .amount-btn {
+            background: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .amount-btn:hover,
+        .amount-btn.active {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .donate-frequency {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .freq-btn {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            cursor: pointer;
+        }
+
+        .freq-btn.active {
+            background: #fff;
+            color: var(--primary);
+        }
+
+        .btn-donate-cta {
+            background: #FF7A45;
+            color: #fff;
+            border: none;
+            padding: 14px 32px;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 15px;
+            margin-top: 16px;
+            transition: all 0.2s;
+        }
+
+        .btn-donate-cta:hover {
+            background: #E8653A;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .donate-info {
+            margin-top: 24px;
+            font-size: 13px;
+            opacity: 0.85;
+        }
+
+        .donate-info span {
+            margin: 0 8px;
+        }
+
+        /* ===== Footer ===== */
+        footer {
+            background: #0F1419;
+            color: #9CA3AF;
+            padding: 60px 0 30px;
+        }
+
+        footer h6 {
+            color: #fff;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-brand-wrap {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 16px;
+        }
+
+        .footer-brand-wrap .name {
+            font-size: 18px;
+            font-weight: 800;
+            color: #fff;
+        }
+
+        .footer-brand-wrap .name .ai-badge {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            font-size: 9px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-left: 4px;
+            vertical-align: middle;
+        }
+
+        .footer-text {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .social-icons a {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            color: #9CA3AF;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 8px;
+            text-decoration: none;
+            font-size: 13px;
+        }
+
+        .social-icons a:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #9CA3AF;
+            text-decoration: none;
+            font-size: 14px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        .footer-subscribe {
+            display: flex;
+            gap: 8px;
+        }
+
+        .footer-subscribe input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+            padding: 10px 14px;
+            border-radius: 8px;
+            flex: 1;
+            font-size: 13px;
+        }
+
+        .footer-subscribe button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            padding: 10px 18px;
+            border-radius: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            margin-top: 40px;
+            padding-top: 20px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+            flex-wrap: wrap;
+            gap: 12px;
+        }
+
+        /* ===== Cookie Banner ===== */
+        .cookie-banner {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            right: 16px;
+            background: #1F2937;
+            color: #D1D5DB;
+            padding: 14px 20px;
+            border-radius: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            z-index: 1000;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .cookie-banner button {
+            margin-left: 12px;
+        }
+
+        .btn-cookie {
+            background: transparent;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: #D1D5DB;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        .btn-accept {
+            background: var(--primary);
+            border: none;
+            color: #fff;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title {
+                font-size: 36px;
+            }
+
+            .hero-text {
+                font-size: 15px;
+            }
+
+            .stat-number,
+            .number-stat .num {
+                font-size: 28px;
+            }
+
+            .section-title {
+                font-size: 24px;
+            }
+
+            .donate-cta h2 {
+                font-size: 24px;
+            }
+
+            .brand-text .name {
+                font-size: 15px;
+            }
+
+            .navbar-collapse {
+                margin-top: 1rem;
+            }
+
+            .navbar-nav {
+                gap: 0.5rem;
+            }
+
+            .navbar-nav .nav-link {
+                width: 100%;
+                padding: 10px 0 !important;
+            }
+
+            .btn-primary-custom,
+            .btn-donate,
+            .btn-outline-secondary {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .donate-amounts,
+            .donate-frequency {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .amount-btn,
+            .freq-btn {
+                width: 100%;
+            }
+
+            .footer-brand-wrap {
+                text-align: center;
+            }
+
+            .footer-brand-wrap .name {
+                margin-top: 12px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Navbar ===== -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="brand-logo" href="home.html">
+                <div class="">
+                    <img class="img-fluid d-block" src="assts/logo/logo.png" alt="Captain Foundation AI"
+                        style="max-height:70px;width:auto;display:block;">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarMain">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#mission">Mission</a></li>
+                    <li class="nav-item"><a class="nav-link" href="program.html">Programs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#impact">Impact</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#stories">Stories</a></li>
+                    <li class="nav-item"><a class="nav-link" href="home.html#get-involved">Get Involved</a></li>
+                    <li class="nav-item"><a class="nav-link" href="donate_page.html">Donate</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                </ul>
+                <a href="#donate" class="btn btn-primary-custom">
+                    <i class="fas fa-heart me-1"></i> Donate Now
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <span class="badge-pill">
+                        <i class="fas fa-hand-holding-heart"></i> Together, We Make a Difference
+                    </span>
+                    <h1 class="hero-title">Change Lives, <span class="highlight">One Life at a Time</span></h1>
+                    <p class="hero-text">At Captain Foundation AI, we believe every person deserves access to education,
+                        healthcare, and opportunity. Powered by intelligence and compassion, we build a world where
+                        communities thrive and futures are limitless.</p>
+                    <div class="d-flex gap-2 justify-content-center flex-wrap">
+                        <a href="#donate" class="btn btn-donate">Donate Now <i class="fas fa-arrow-right ms-2"></i></a>
+                        <a href="#mission" class="btn btn-outline-secondary">See Our Impact <i
+                                class="fas fa-arrow-right ms-2"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Stats Hero ===== -->
+    <section class="stats-hero">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="50000">0</div>
+                        <div class="stat-label">Lives Changed</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="120">0</div>
+                        <div class="stat-label">Communities</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-target="15">0</div>
+                        <div class="stat-label">Countries</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="stat-item">
+                        <div class="stat-number" data-prefix="$" data-target="10">0</div>
+                        <div class="stat-label">Raised</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Image Section ===== -->
+    <section class="image-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="image-card">
+                        <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=1200&h=600&fit=crop"
+                            alt="Children smiling">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Light Stats ===== -->
+    <section class="light-stats">
+        <div class="container">
+            <div class="row g-4 text-center">
+                <div class="col-6 col-md-3">
+                    <div class="light-stat-number">$1.4M+</div>
+                    <div class="light-stat-label">Funds Raised</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="light-stat-number">14K+</div>
+                    <div class="light-stat-label">Lives Impacted</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="light-stat-number">57+</div>
+                    <div class="light-stat-label">Active Volunteers</div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="light-stat-number">3</div>
+                    <div class="light-stat-label">Countries Served</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Mission Section ===== -->
+    <section class="mission-section" id="mission">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-6">
+                    <span class="section-tag">Our Mission</span>
+                    <h2 class="section-title">Building a Better World Together</h2>
+                    <p class="section-text mb-4">At Captain Foundation AI, we are driven by the belief that lasting
+                        change starts at the community level. Through grassroots partnerships and sustainable programs,
+                        we empower local leaders to create solutions that endure long after our direct involvement.</p>
+                    <div class="mission-list">
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-graduation-cap"></i></div>
+                            <div class="mission-content">
+                                <h6>Education</h6>
+                                <p>Building schools, training teachers, and providing scholarships to unlock potential
+                                    in every child.</p>
+                            </div>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-heartbeat"></i></div>
+                            <div class="mission-content">
+                                <h6>Healthcare</h6>
+                                <p>Delivering mobile clinics, clean water, and preventive care to communities with
+                                    limited access.</p>
+                            </div>
+                        </div>
+                        <div class="mission-item">
+                            <div class="mission-icon"><i class="fas fa-leaf"></i></div>
+                            <div class="mission-content">
+                                <h6>Sustainability</h6>
+                                <p>Promoting clean energy, reforestation, and sustainable farming for long-term
+                                    community resilience.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="mission-image">
+                        <img src="https://images.unsplash.com/photo-1593113598332-cd288d649433?w=600&h=750&fit=crop"
+                            alt="Volunteer">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Programs Section ===== -->
+    <section class="programs-section" id="programs">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Our Programs</span>
+                <h2 class="section-title">Flagship Initiatives</h2>
+                <p class="section-text mx-auto" style="max-width: 600px;">Our four flagship programs address the most
+                    critical needs in underserved communities around the world.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-book-open"></i></div>
+                        <h5>Education for All</h5>
+                        <p>Building schools, training teachers, and providing scholarships to ensure every child has
+                            access to quality education regardless of their background.</p>
+                        <a href="#" class="learn-more">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-heartbeat"></i></div>
+                        <h5>Health & Wellness</h5>
+                        <p>Operating mobile clinics, vaccination drives, and clean water projects to bring essential
+                            healthcare services to remote and underserved communities.</p>
+                        <a href="#" class="learn-more">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-chart-line"></i></div>
+                        <h5>Economic Empowerment</h5>
+                        <p>Providing microloans, job training programs, and women's cooperatives to help families build
+                            sustainable livelihoods and break the cycle of poverty.</p>
+                        <a href="#" class="learn-more">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="program-card">
+                        <div class="program-icon"><i class="fas fa-leaf"></i></div>
+                        <h5>Environmental Action</h5>
+                        <p>Leading reforestation initiatives, clean energy installations, and sustainable farming
+                            education to protect ecosystems and combat climate change.</p>
+                        <a href="#" class="learn-more">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Numbers Section ===== -->
+    <section class="numbers-section" id="impact">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Our Impact</span>
+                <h2 class="section-title">Numbers That Matter</h2>
+                <p class="section-text mx-auto" style="max-width: 600px;">Every number represents a life changed, a
+                    community strengthened, and a future made brighter.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-3">
+                    <div class="number-stat">
+                        <div class="num">50,000+</div>
+                        <div class="lbl">Lives Impacted</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="number-stat">
+                        <div class="num">120+</div>
+                        <div class="lbl">Schools Built</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="number-stat">
+                        <div class="num">500+</div>
+                        <div class="lbl">Meals Served</div>
+                    </div>
+                </div>
+                <div class="col-6 col-md-3">
+                    <div class="number-stat">
+                        <div class="num">15</div>
+                        <div class="lbl">Countries Served</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Progress Section ===== -->
+    <section class="progress-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7">
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>School Building Fund</span>
+                            <span>65% of $2M</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar-custom" style="width: 0%" data-width="65%"></div>
+                        </div>
+                    </div>
+                    <div class="progress-item">
+                        <div class="progress-header">
+                            <span>Medical Supplies</span>
+                            <span>82% of $250K</span>
+                        </div>
+                        <div class="progress">
+                            <div class="progress-bar-custom" style="width: 0%" data-width="82%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Testimonials ===== -->
+    <section class="testimonials-section" id="stories">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Stories</span>
+                <h2 class="section-title">Lives Transformed</h2>
+                <p class="section-text mx-auto" style="max-width: 600px;">Behind every statistic is a human story. Meet
+                    some of the people whose lives have been changed through our programs.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"I never knew I could dream. My parents made my village, the one
+                            inspiring true support from my village."</p>
+                        <div class="testimonial-user">
+                            <div class="user-avatar">PA</div>
+                            <div>
+                                <div class="user-name">Priya Sharma</div>
+                                <div class="user-role">Student, India</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The clean water project has changed my life and my community in our
+                            community, every month water was once distance, no more."</p>
+                        <div class="testimonial-user">
+                            <div class="user-avatar">SD</div>
+                            <div>
+                                <div class="user-name">Samuel Okello</div>
+                                <div class="user-role">Program Graduate</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"The leadership training I received from Captain Foundation AI's
+                            mentorship has given me a difference in my community, in our community, the impact, that's
+                            made a difference."</p>
+                        <div class="testimonial-user">
+                            <div class="user-avatar">EM</div>
+                            <div>
+                                <div class="user-name">Elizabete Moreno</div>
+                                <div class="user-role">Returning Donor</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-nav">
+                <div class="dot active"></div>
+                <div class="dot"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Join Our Mission ===== -->
+    <section class="join-mission" id="get-involved">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">Get Involved</span>
+                <h2 class="section-title">Join Our Mission</h2>
+                <p class="section-text mx-auto" style="max-width: 600px;">There are many ways to make a difference.
+                    Whether you give your time, your skills, or your support, every contribution matters.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="action-card">
+                        <div class="action-icon"><i class="fas fa-hands-helping"></i></div>
+                        <h5>Volunteer</h5>
+                        <p>Give your time and skills to make a direct impact. Join skills-based, board committees, or
+                            help with our local events and drives.</p>
+                        <a href="#" class="btn btn-outline-primary-custom">Start Volunteering →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="action-card">
+                        <div class="action-icon"><i class="fas fa-dollar-sign"></i></div>
+                        <h5>Fundraise</h5>
+                        <p>Start a fundraising campaign for a cause you care about. Every dollar raised goes directly to
+                            the programs and communities we serve.</p>
+                        <a href="#" class="btn btn-outline-primary-custom">Start a Campaign →</a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="action-card">
+                        <div class="action-icon"><i class="fas fa-handshake"></i></div>
+                        <h5>Partner</h5>
+                        <p>Corporate and organizational partnerships amplify our impact. Join us as a partner and help
+                            us reach more communities worldwide.</p>
+                        <a href="#" class="btn btn-outline-primary-custom">Become a Partner →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ Section ===== -->
+    <section class="faq-section" id="faq">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item active">
+                        <div class="faq-question">
+                            <span>Are my donations tax-deductible?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">Yes, all donations to Captain Foundation AI are tax-deductible. You will
+                            receive an official receipt via email immediately after your donation is processed.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How are funds allocated?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">92% of every dollar goes directly to our programs. 6% covers
+                            administrative costs and 2% supports fundraising efforts to expand our reach.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>How can I volunteer?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">You can apply to volunteer through our Get Involved page. We have
+                            opportunities both locally and internationally, with flexible time commitments.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I set up recurring donations?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">Absolutely! Monthly donations provide us with sustainable funding. You
+                            can choose any amount and cancel anytime through your donor dashboard.</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do you work internationally?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">Yes, we currently operate in 15 countries across 4 continents,
+                            partnering with local organizations to deliver sustainable programs.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Donate CTA ===== -->
+    <section class="donate-cta" id="donate">
+        <div class="container">
+            <h2>Your generosity directly funds life-changing programs in communities<br>that need it most</h2>
+            <p>Choose the amount that works for you. Every gift makes a difference.</p>
+
+            <div class="donate-frequency mb-3">
+                <button class="freq-btn">One-time</button>
+                <button class="freq-btn active">Monthly</button>
+                <button class="freq-btn">Annually</button>
+            </div>
+
+            <div class="donate-amounts">
+                <button class="amount-btn">$25</button>
+                <button class="amount-btn">$50</button>
+                <button class="amount-btn active">$100</button>
+                <button class="amount-btn">$500</button>
+                <button class="amount-btn">Custom</button>
+            </div>
+
+            <button class="btn btn-donate-cta">Donate Now <i class="fas fa-arrow-right ms-2"></i></button>
+
+            <div class="donate-info">
+                <span><i class="fas fa-shield-alt me-1"></i> 100% Tax Deductible</span>
+                <span><i class="fas fa-lock me-1"></i> Secure Donation</span>
+                <span><i class="fas fa-heart me-1"></i> SSL Encrypted</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="bg-dark text-white pt-5 pb-3">
+        <div class="container">
+
+            <div class="row gy-5">
+
+                <!-- Logo -->
+                <div class="col-lg-4 col-md-12 text-center text-lg-start">
+
+                    <a href="home.html" class="d-inline-block mb-3">
+                        <img src="assts/logo/logo.png" class="img-fluid" style="max-height:120px;"
+                            alt="Captain Foundation AI">
+                    </a>
+
+                    <h4 class="fw-bold">
+                        Captain Foundation <span class="text-success">AI</span>
+                    </h4>
+
+                    <p class="text-light mt-3">
+                        Empowering communities through education, healthcare, and sustainable
+                        development worldwide with intelligent solutions.
+                    </p>
+
+                    <div class="d-flex justify-content-center justify-content-lg-start gap-3 mt-3">
+                        <a href="#" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+                    </div>
+
+                </div>
+
+                <!-- Programs -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Programs</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Education</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Healthcare</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Economic</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Empowerment</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Environment</a></li>
+                    </ul>
+                </div>
+
+                <!-- Organization -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Organization</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">About Us</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Our Team</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Annual Report</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Press</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support -->
+                <div class="col-lg-2 col-md-6 col-6">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-light text-decoration-none">Donate</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Volunteer</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Partner</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">FAQ</a></li>
+                        <li><a href="#" class="text-light text-decoration-none">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Subscribe -->
+                <div class="col-lg-2 col-md-6 col-12">
+
+                    <h6 class="fw-bold mb-3">Stay Updated</h6>
+
+                    <p class="small text-light">
+                        Get updates about our programs and the communities we serve.
+                    </p>
+
+                    <div class="input-group">
+                        <input type="email" class="form-control" placeholder="Your email">
+                        <button class="btn btn-success">Subscribe</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <hr class="border-secondary my-4">
+
+            <div class="d-flex flex-column flex-lg-row justify-content-between align-items-center text-center gap-2">
+
+                <small>
+                    © 2024 Captain Foundation AI. All rights reserved.
+                </small>
+
+                <small>
+                    Privacy Policy | Terms of Service
+                </small>
+
+                <small>
+                    Made with <i class="fas fa-heart text-danger"></i> for a better world
+                </small>
+
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ===== Cookie Banner ===== -->
+    <div class="cookie-banner" id="cookieBanner">
+        <div>We use cookies to enhance your experience. By continuing to visit this site you agree to our use of
+            cookies.</div>
+        <div>
+            <button class="btn-cookie" onclick="closeCookie()">Decline</button>
+            <button class="btn-accept" onclick="closeCookie()">Accept All</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(q => {
+            q.addEventListener('click', () => {
+                const item = q.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Donation Amounts
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Frequency buttons
+        document.querySelectorAll('.freq-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.freq-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            });
+        });
+
+        // Animated Counter
+        const animateCounter = (el) => {
+            const target = parseInt(el.getAttribute('data-target'));
+            const prefix = el.getAttribute('data-prefix') || '';
+            const suffix = target >= 1000 ? '+' : '';
+            const duration = 2000;
+            const start = 0;
+            const startTime = performance.now();
+
+            const update = (currentTime) => {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const easeOut = 1 - Math.pow(1 - progress, 3);
+                const current = Math.floor(start + (target - start) * easeOut);
+                el.textContent = prefix + current.toLocaleString() + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+            };
+            requestAnimationFrame(update);
+        };
+
+        // Animate Progress Bars
+        const animateProgress = () => {
+            document.querySelectorAll('.progress-bar-custom').forEach(bar => {
+                bar.style.width = bar.getAttribute('data-width');
+            });
+        };
+
+        // Intersection Observer
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    if (entry.target.classList.contains('stat-number')) {
+                        animateCounter(entry.target);
+                    }
+                    if (entry.target.classList.contains('progress-bar-custom')) {
+                        animateProgress();
+                    }
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        document.querySelectorAll('.stat-number').forEach(el => observer.observe(el));
+        document.querySelectorAll('.progress-bar-custom').forEach(el => observer.observe(el));
+
+        // Testimonial dots
+        document.querySelectorAll('.testimonial-nav .dot').forEach(dot => {
+            dot.addEventListener('click', () => {
+                document.querySelectorAll('.testimonial-nav .dot').forEach(d => d.classList.remove('active'));
+                dot.classList.add('active');
+            });
+        });
+
+        // Cookie Banner
+        function closeCookie() {
+            document.getElementById('cookieBanner').style.display = 'none';
+        }
+
+        // Navbar scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                nav.style.boxShadow = '0 2px 10px rgba(0,0,0,0.05)';
+            } else {
+                nav.style.boxShadow = 'none';
+            }
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    e.preventDefault();
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
